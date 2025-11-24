@@ -12,26 +12,36 @@ namespace CurbSydeApp.Forms
 {
     public partial class RemainingPicksForm : Form
     {
+        public static RemainingPicksForm remPicksScreen = new RemainingPicksForm();       //Allows other screens to access RemainingPicksForm
+
+        //Constructor
         public RemainingPicksForm()
         {
             InitializeComponent();
         }
-        //Switches to "OverviewForm"
+        //Switches to "OverviewForm" & updates clock in MainForm
         private void backButton_Click(object sender, EventArgs e)
         {
-            OverviewForm overviewScreen = new OverviewForm();
-            overviewScreen.Dock = DockStyle.Fill;
-            overviewScreen.TopLevel = false;
-            MainForm.mainPanel.Controls.Clear();
-            MainForm.mainPanel.Controls.Add(overviewScreen);
-            overviewScreen.Show();
+            MainForm.mainScreen.updateClock(1);
+            OverviewForm.overviewScreen.updateScreen();
 
-            this.Close();
+            OverviewForm.overviewScreen.Dock = DockStyle.Fill;
+            OverviewForm.overviewScreen.TopLevel = false;
+            MainForm.mainPanel.Controls.Clear();
+            MainForm.mainPanel.Controls.Add(OverviewForm.overviewScreen);
+            OverviewForm.overviewScreen.Show();
         }
-        //Modify currentLabel so "#" shows current amount of picks in system
-        //Modify remainingLabel so "#" shows total remaining amount of picks for the day
-        //Modify the hour labels so "Hour" = "1-2pm", etc & "#" = corresponding amount for that hour
-        //Modify completedLabel so "#" = total amount of picks completed for the day
         //Modify timeLabel so "00:00" changes with each time change
+        public void updateScreen()
+        {
+            timeLabel.Text = MainForm.mainScreen.formatClock();
+        }
+
+        //TO DO : 
+        //          Modify currentLabel so "#" shows current amount of picks in system
+        //          Modify remainingLabel so "#" shows total remaining amount of picks for the day
+        //          Modify the hour labels so "Hour" = "1-2pm", etc & "#" = corresponding amount for that hour
+        //          Modify completedLabel so "#" = total amount of picks completed for the day
+        
     }
 }

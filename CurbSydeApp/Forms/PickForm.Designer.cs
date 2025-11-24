@@ -86,7 +86,7 @@
             switchPickButton.TabIndex = 14;
             switchPickButton.Text = "P";
             switchPickButton.UseVisualStyleBackColor = false;
-            switchPickButton.Click += switchPickButton_Click;
+            //switchPickButton.Click += switchPickButton_Click;
             // 
             // timeLabel
             // 

@@ -56,7 +56,7 @@
             employeeLabel1.BackColor = Color.White;
             employeeLabel1.Font = new Font("Cascadia Mono", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             employeeLabel1.ForeColor = Color.BlueViolet;
-            employeeLabel1.Location = new Point(45, 52);
+            employeeLabel1.Location = new Point(45, 147);
             employeeLabel1.Name = "employeeLabel1";
             employeeLabel1.Size = new Size(431, 47);
             employeeLabel1.TabIndex = 5;
@@ -68,7 +68,7 @@
             employeeLabel2.BackColor = Color.White;
             employeeLabel2.Font = new Font("Cascadia Mono", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             employeeLabel2.ForeColor = Color.BlueViolet;
-            employeeLabel2.Location = new Point(45, 156);
+            employeeLabel2.Location = new Point(45, 251);
             employeeLabel2.Name = "employeeLabel2";
             employeeLabel2.Size = new Size(431, 47);
             employeeLabel2.TabIndex = 6;
@@ -80,7 +80,7 @@
             employeeLabel4.BackColor = Color.White;
             employeeLabel4.Font = new Font("Cascadia Mono", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             employeeLabel4.ForeColor = Color.BlueViolet;
-            employeeLabel4.Location = new Point(45, 371);
+            employeeLabel4.Location = new Point(45, 466);
             employeeLabel4.Name = "employeeLabel4";
             employeeLabel4.Size = new Size(431, 47);
             employeeLabel4.TabIndex = 8;
@@ -92,7 +92,7 @@
             employeeLabel3.BackColor = Color.White;
             employeeLabel3.Font = new Font("Cascadia Mono", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             employeeLabel3.ForeColor = Color.BlueViolet;
-            employeeLabel3.Location = new Point(45, 267);
+            employeeLabel3.Location = new Point(45, 362);
             employeeLabel3.Name = "employeeLabel3";
             employeeLabel3.Size = new Size(431, 47);
             employeeLabel3.TabIndex = 7;
@@ -104,7 +104,7 @@
             employeeLabel6.BackColor = Color.White;
             employeeLabel6.Font = new Font("Cascadia Mono", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             employeeLabel6.ForeColor = Color.BlueViolet;
-            employeeLabel6.Location = new Point(45, 569);
+            employeeLabel6.Location = new Point(45, 51);
             employeeLabel6.Name = "employeeLabel6";
             employeeLabel6.Size = new Size(431, 47);
             employeeLabel6.TabIndex = 10;
@@ -116,7 +116,7 @@
             employeeLabel5.BackColor = Color.White;
             employeeLabel5.Font = new Font("Cascadia Mono", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             employeeLabel5.ForeColor = Color.BlueViolet;
-            employeeLabel5.Location = new Point(45, 465);
+            employeeLabel5.Location = new Point(45, 560);
             employeeLabel5.Name = "employeeLabel5";
             employeeLabel5.Size = new Size(431, 47);
             employeeLabel5.TabIndex = 9;

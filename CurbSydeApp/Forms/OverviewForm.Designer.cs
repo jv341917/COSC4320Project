@@ -40,6 +40,7 @@
             remainingPicksButton = new Button();
             userNameLabel = new Label();
             timeLabel = new Label();
+            logoutButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -82,7 +83,7 @@
             switchOverviewButton.TabIndex = 3;
             switchOverviewButton.Text = "O";
             switchOverviewButton.UseVisualStyleBackColor = false;
-            switchOverviewButton.Click += switchOverviewButton_Click;
+            //switchOverviewButton.Click += switchOverviewButton_Click;
             // 
             // dispenseQueueLabel
             // 
@@ -180,12 +181,26 @@
             timeLabel.Text = "00:00";
             timeLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // logoutButton
+            // 
+            logoutButton.BackColor = Color.BlueViolet;
+            logoutButton.Font = new Font("Cascadia Mono", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            logoutButton.ForeColor = Color.White;
+            logoutButton.Location = new Point(406, 56);
+            logoutButton.Name = "logoutButton";
+            logoutButton.Size = new Size(104, 47);
+            logoutButton.TabIndex = 15;
+            logoutButton.Text = "Log Out";
+            logoutButton.UseVisualStyleBackColor = false;
+            logoutButton.Click += logoutButton_Click;
+            // 
             // OverviewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(522, 776);
+            Controls.Add(logoutButton);
             Controls.Add(timeLabel);
             Controls.Add(userNameLabel);
             Controls.Add(remainingPicksButton);
@@ -222,5 +237,6 @@
         private Button remainingPicksButton;
         private Label userNameLabel;
         private Label timeLabel;
+        private Button logoutButton;
     }
 }

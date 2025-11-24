@@ -15,10 +15,14 @@ namespace CurbSydeApp.Forms
 {
     public partial class LoginForm : Form
     {
-        private String userName;
+        public static LoginForm loginScreen = new LoginForm();      //Allows other screens to access LoginForm
+        private String userName;                                    //Stores the user's input
+
+        //Constructor
         public LoginForm()
         {
             InitializeComponent();
+            userName = "";                                          //Initializes
         }
 
         //usernameInput text must be at least 3 chars & stores name
@@ -34,20 +38,24 @@ namespace CurbSydeApp.Forms
             {
                 userName = this.usernameInput.Text.Trim();
 
-                OverviewForm overviewScreen = new OverviewForm();
-                overviewScreen.Dock = DockStyle.Fill;
-                overviewScreen.TopLevel = false;
-                MainForm.mainPanel.Controls.Clear();
-                MainForm.mainPanel.Controls.Add(overviewScreen);
-                overviewScreen.Show();
+                OverviewForm.overviewScreen.updateScreen();
 
-                this.Close();
+                OverviewForm.overviewScreen.Dock = DockStyle.Fill;
+                OverviewForm.overviewScreen.TopLevel = false;
+                MainForm.mainPanel.Controls.Clear();
+                MainForm.mainPanel.Controls.Add(OverviewForm.overviewScreen);
+                OverviewForm.overviewScreen.Show();
+
+                EmployeesForm.employeeScreen.setUser(userName);
+
+                this.Close();                                                   //Screen is never accessed again throughout program
             }
         }
-
+        //Getter function - returns username
         public String getUserName()
         {
             return userName;
         }
     }
 }
+ 

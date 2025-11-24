@@ -106,7 +106,7 @@
             switchDispenseButton.TabIndex = 16;
             switchDispenseButton.Text = "D";
             switchDispenseButton.UseVisualStyleBackColor = false;
-            switchDispenseButton.Click += switchDispenseButton_Click;
+            //switchDispenseButton.Click += switchDispenseButton_Click;
             // 
             // switchPickButton
             // 

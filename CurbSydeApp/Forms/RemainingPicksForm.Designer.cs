@@ -185,7 +185,6 @@
         private Label currentLabel;
         private Label completedLabel;
         private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private Label remainingLabel;
         private Button backButton;
