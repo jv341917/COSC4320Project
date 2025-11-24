@@ -1,0 +1,390 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\remainingpicksform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\remainingpicksform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\employeesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\employeesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\remainingpicksform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\remainingpicksform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\employeesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\employeesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\overviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\overviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\employeenames.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:employeenames.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\pickhourinfo.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:pickhourinfo.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\dispenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\dispenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\dispensedxform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\dispensedxform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\selectedcarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\selectedcarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\pickwalkform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\pickwalkform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\pickform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\pickform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\overviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\overviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\dispensedxform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\dispensedxform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\selectedcarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\selectedcarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\pickwalkform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\pickwalkform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\pickform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\pickform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\logoutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\logoutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|c:\\users\\jaise\\source\\repos\\curbsydeapp\\forms\\dispenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFAFAC1E-5DE8-4A82-929B-E90AD8B4BF6E}|CurbSydeApp.csproj|solutionrelative:forms\\dispenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 233,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "pickHourInfo.txt",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\pickHourInfo.txt",
+              "RelativeDocumentMoniker": "pickHourInfo.txt",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\pickHourInfo.txt",
+              "RelativeToolTip": "pickHourInfo.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-22T05:13:02.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "employeeNames.txt",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\employeeNames.txt",
+              "RelativeDocumentMoniker": "employeeNames.txt",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\employeeNames.txt",
+              "RelativeToolTip": "employeeNames.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-22T05:10:46.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA1wDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T23:43:42.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\LoginForm.cs",
+              "RelativeToolTip": "Forms\\LoginForm.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:08:00.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OverviewForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\OverviewForm.cs",
+              "RelativeDocumentMoniker": "Forms\\OverviewForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\OverviewForm.cs",
+              "RelativeToolTip": "Forms\\OverviewForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T02:08:50.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\EmployeesForm.cs",
+              "RelativeDocumentMoniker": "Forms\\EmployeesForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\EmployeesForm.cs",
+              "RelativeToolTip": "Forms\\EmployeesForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:55:26.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RemainingPicksForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\RemainingPicksForm.cs",
+              "RelativeDocumentMoniker": "Forms\\RemainingPicksForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\RemainingPicksForm.cs",
+              "RelativeToolTip": "Forms\\RemainingPicksForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAACNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:56:51.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PickForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickForm.cs",
+              "RelativeDocumentMoniker": "Forms\\PickForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickForm.cs",
+              "RelativeToolTip": "Forms\\PickForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:57:28.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PickWalkForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickWalkForm.cs",
+              "RelativeDocumentMoniker": "Forms\\PickWalkForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickWalkForm.cs",
+              "RelativeToolTip": "Forms\\PickWalkForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:59:01.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DispenseForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispenseForm.cs",
+              "RelativeDocumentMoniker": "Forms\\DispenseForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispenseForm.cs",
+              "RelativeToolTip": "Forms\\DispenseForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:36:16.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SelectedCarForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\SelectedCarForm.cs",
+              "RelativeDocumentMoniker": "Forms\\SelectedCarForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\SelectedCarForm.cs",
+              "RelativeToolTip": "Forms\\SelectedCarForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAACEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T05:06:10.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DispensedXForm.cs",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispensedXForm.cs",
+              "RelativeDocumentMoniker": "Forms\\DispensedXForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispensedXForm.cs",
+              "RelativeToolTip": "Forms\\DispensedXForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:44:58.354Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 93,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\LoginForm.cs [Design]",
+              "RelativeToolTip": "Forms\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:26.975Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OverviewForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\OverviewForm.cs",
+              "RelativeDocumentMoniker": "Forms\\OverviewForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\OverviewForm.cs [Design]",
+              "RelativeToolTip": "Forms\\OverviewForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:32.213Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeesForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\EmployeesForm.cs",
+              "RelativeDocumentMoniker": "Forms\\EmployeesForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\EmployeesForm.cs [Design]",
+              "RelativeToolTip": "Forms\\EmployeesForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:13.673Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RemainingPicksForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\RemainingPicksForm.cs",
+              "RelativeDocumentMoniker": "Forms\\RemainingPicksForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\RemainingPicksForm.cs [Design]",
+              "RelativeToolTip": "Forms\\RemainingPicksForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:35.992Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PickForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickForm.cs",
+              "RelativeDocumentMoniker": "Forms\\PickForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickForm.cs [Design]",
+              "RelativeToolTip": "Forms\\PickForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:34.16Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PickWalkForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickWalkForm.cs",
+              "RelativeDocumentMoniker": "Forms\\PickWalkForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\PickWalkForm.cs [Design]",
+              "RelativeToolTip": "Forms\\PickWalkForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:35.04Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DispenseForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispenseForm.cs",
+              "RelativeDocumentMoniker": "Forms\\DispenseForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispenseForm.cs [Design]",
+              "RelativeToolTip": "Forms\\DispenseForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:36:10.22Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SelectedCarForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\SelectedCarForm.cs",
+              "RelativeDocumentMoniker": "Forms\\SelectedCarForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\SelectedCarForm.cs [Design]",
+              "RelativeToolTip": "Forms\\SelectedCarForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:37.993Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DispensedXForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispensedXForm.cs",
+              "RelativeDocumentMoniker": "Forms\\DispensedXForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\DispensedXForm.cs [Design]",
+              "RelativeToolTip": "Forms\\DispensedXForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:44:53.949Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LogoutForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\LogoutForm.cs",
+              "RelativeDocumentMoniker": "Forms\\LogoutForm.cs",
+              "ToolTip": "C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\Forms\\LogoutForm.cs [Design]",
+              "RelativeToolTip": "Forms\\LogoutForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T04:52:29.984Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
