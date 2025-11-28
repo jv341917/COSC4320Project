@@ -32,9 +32,12 @@ namespace CurbSydeApp.Forms
             DispenseForm.dispenseScreen.Show();
         }
         //Modify timeLabel so "00:00" = changed time
-        public void updateScreen()
+        public void updateScreen(int i)
         {
             timeLabel.Text = MainForm.mainScreen.formatClock();
+
+            carLabel.Text = DispenseForm.dispenseScreen.getCar(i).name + "";
+            DispenseForm.dispenseScreen.removeCar(i);
         }
 
         //TO DO : 

@@ -22,7 +22,6 @@ namespace CurbSydeApp.Forms
         public DispenseForm()
         {
             InitializeComponent();
-            //carArray = MainForm.mainScreen.createCarArray("C:\\Users\\user\\source\\Repos\\CurbSydeApp\\carNames.txt");
             carArray = new List<Car>();
             carNames = MainForm.mainScreen.readInFile("C:\\Users\\user\\source\\Repos\\CurbSydeApp\\carNames.txt");
             ranNum = new Random();
@@ -55,7 +54,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton1_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[0]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[0], 0);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -66,7 +65,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton2_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[1]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[1], 1);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -77,7 +76,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton3_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[2]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[2], 2);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -88,7 +87,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton4_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[3]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[3], 3);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -99,7 +98,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton5_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[4]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[4], 4);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -116,6 +115,7 @@ namespace CurbSydeApp.Forms
 
             if (carArray.Count > 0)
             {
+                carButton1.Visible = true;
                 minLabel1.Visible = true;
                 if (carArray[0].time < 7)
                 {
@@ -130,11 +130,13 @@ namespace CurbSydeApp.Forms
             }
             else
             {
+                carButton1.Visible = false;
                 minLabel1.Visible = false;
             }
 
             if (carArray.Count > 1)
             {
+                carButton2.Visible = true;
                 minLabel2.Visible = true;
                 if (carArray[1].time < 7)
                 {
@@ -149,11 +151,13 @@ namespace CurbSydeApp.Forms
             }
             else
             {
+                carButton2.Visible = false;
                 minLabel2.Visible = false;
             }
 
             if (carArray.Count > 2)
             {
+                carButton3.Visible = true;
                 minLabel3.Visible = true;
                 if (carArray[2].time < 7)
                 {
@@ -168,11 +172,13 @@ namespace CurbSydeApp.Forms
             }
             else
             {
+                carButton3.Visible = false;
                 minLabel3.Visible = false;
             }
 
             if (carArray.Count > 3)
             {
+                carButton4.Visible = true;
                 minLabel4.Visible = true;
                 if (carArray[3].time < 7)
                 {
@@ -187,11 +193,13 @@ namespace CurbSydeApp.Forms
             }
             else
             {
+                carButton4.Visible = false;
                 minLabel4.Visible = false;
             }
 
             if (carArray.Count > 4)
             {
+                carButton5.Visible = true;
                 minLabel5.Visible = true;
                 if (carArray[4].time < 7)
                 {
@@ -206,6 +214,7 @@ namespace CurbSydeApp.Forms
             }
             else
             {
+                carButton5.Visible = false;
                 minLabel5.Visible = false;
             }
         }
@@ -214,7 +223,16 @@ namespace CurbSydeApp.Forms
         {
             Car c = new Car();
             c.name = carNames[ranNum.Next(19)];
-            c.spot = (char)ranNum.Next(7) + 65;
+
+            char temp = (char)(ranNum.Next(7) + 65);
+            for(int i = 0; i < carArray.Count; i++)
+            {
+                if(temp == carArray.ElementAt(i).spot)
+                {
+                    temp = (char)(ranNum.Next(7) + 65);
+                }
+            }
+            c.spot = temp;
             c.time = 0;
             c.stageNum = ranNum.Next(9);
             c.coolerNum = ranNum.Next(9);
@@ -230,8 +248,20 @@ namespace CurbSydeApp.Forms
         {
             for (int i = 0; i < carArray.Count; i++)
             {
-                carArray[i].time += change;
+                Car c = carArray.ElementAt(i);
+                c.time += change;
+                carArray[i] = c;
             }
+        }
+
+        public Car getCar(int i)
+        {
+            return carArray.ElementAt(i);
+        }
+
+        public void removeCar(int i)
+        {
+            carArray.RemoveAt(i);
         }
     }
 }
