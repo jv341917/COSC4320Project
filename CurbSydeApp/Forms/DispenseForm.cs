@@ -14,16 +14,18 @@ namespace CurbSydeApp.Forms
     public partial class DispenseForm : Form
     {
         public static DispenseForm dispenseScreen = new DispenseForm();         //Allows other screens to access DispenseForm
-        private Car[] carArray;                                                 //Stores the cars in the car queue
-        private int[] carsOnScreen;
-        //private Queue<Car> carQueue;
+        private List<Car> carArray;                                             //Stores the cars in the car queue
+        private string[] carNames;                                              //Stores the car names
+        private Random ranNum;
+
         //Constructor
         public DispenseForm()
         {
             InitializeComponent();
-            carArray = MainForm.mainScreen.createCarArray("C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\carNames.txt");
-            carsOnScreen = new int[5];
-            //carQueue = new Queue<Car>();
+            //carArray = MainForm.mainScreen.createCarArray("C:\\Users\\user\\source\\Repos\\CurbSydeApp\\carNames.txt");
+            carArray = new List<Car>();
+            carNames = MainForm.mainScreen.readInFile("C:\\Users\\user\\source\\Repos\\CurbSydeApp\\carNames.txt");
+            ranNum = new Random();
         }
         #region Screen Switches
         //Switches to "PickForm" & updates the clock in MainForm
@@ -53,7 +55,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton1_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[carsOnScreen[0]]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[0]);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -64,7 +66,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton2_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[carsOnScreen[1]]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[1]);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -75,7 +77,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton3_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[carsOnScreen[2]]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[2]);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -86,7 +88,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton4_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[carsOnScreen[3]]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[3]);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -97,7 +99,7 @@ namespace CurbSydeApp.Forms
         //Switch to "SelectedCarForm"
         private void carButton5_Click(object sender, EventArgs e)
         {
-            SelectedCarForm.selectScreen.updateScreen(carArray[carsOnScreen[4]]);
+            SelectedCarForm.selectScreen.updateScreen(carArray[4]);
 
             SelectedCarForm.selectScreen.Dock = DockStyle.Fill;
             SelectedCarForm.selectScreen.TopLevel = false;
@@ -107,45 +109,23 @@ namespace CurbSydeApp.Forms
         }
         #endregion
 
-        //Modify timeLabel "00:00" = changes to time & calls to setLabels()
+        //Modify timeLabel "00:00" = changes to time & changes the 5 car labels
         public void updateScreen()
         {
             timeLabel.Text = MainForm.mainScreen.formatClock();
 
-            //updateCars();
-
-            int index = 0;
-
-            for (int i = 0; i < carArray.Length; i++)
-            {
-                if(index <= 4)
-                {
-                    break;
-                }
-
-                if (carArray[i].time > 0)
-                {
-                    carsOnScreen[index] = i+1;
-                }
-            }
-
-            setLabels();
-        }
-        //Modify the buttons & labels to correctly display the spot, name, and time with each car
-        //                      if there aren't enough cars in queue for the buttons, hide the unused buttons
-        private void setLabels()
-        {
-            if (carsOnScreen[0] != 0)
+            if (carArray.Count > 0)
             {
                 minLabel1.Visible = true;
-                carButton1.Text = carArray[carsOnScreen[0]].spot + " - " + carArray[carsOnScreen[0]].name;
-                if (carArray[carsOnScreen[0]].time < 7)
+                if (carArray[0].time < 7)
                 {
+                    carButton1.Text = "/ - " + carArray[0].name;
                     minLabel1.Text = "- min";
                 }
                 else
                 {
-                    minLabel1.Text = carArray[carsOnScreen[0]].time + " min";
+                    carButton1.Text = carArray[0].spot + " - " + carArray[0].name;
+                    minLabel1.Text = carArray[0].time + " min";
                 }
             }
             else
@@ -153,17 +133,18 @@ namespace CurbSydeApp.Forms
                 minLabel1.Visible = false;
             }
 
-            if (carsOnScreen[1] != 0)
+            if (carArray.Count > 1)
             {
                 minLabel2.Visible = true;
-                carButton2.Text = carArray[carsOnScreen[1]].spot + " - " + carArray[carsOnScreen[1]].name;
-                if (carArray[carsOnScreen[1]].time < 7)
+                if (carArray[1].time < 7)
                 {
+                    carButton2.Text = "/ - " + carArray[1].name;
                     minLabel2.Text = "- min";
                 }
                 else
                 {
-                    minLabel2.Text = carArray[carsOnScreen[1]].time + " min";
+                    carButton2.Text = carArray[1].spot + " - " + carArray[1].name;
+                    minLabel2.Text = carArray[1].time + " min";
                 }
             }
             else
@@ -171,17 +152,18 @@ namespace CurbSydeApp.Forms
                 minLabel2.Visible = false;
             }
 
-            if (carsOnScreen[2] != 0)
+            if (carArray.Count > 2)
             {
                 minLabel3.Visible = true;
-                carButton3.Text = carArray[carsOnScreen[2]].spot + " - " + carArray[carsOnScreen[2]].name;
-                if (carArray[carsOnScreen[2]].time < 7)
+                if (carArray[2].time < 7)
                 {
+                    carButton3.Text = "/ - " + carArray[2].name;
                     minLabel3.Text = "- min";
                 }
                 else
                 {
-                    minLabel3.Text = carArray[carsOnScreen[2]].time + " min";
+                    carButton3.Text = carArray[2].spot + " - " + carArray[2].name;
+                    minLabel3.Text = carArray[2].time + " min";
                 }
             }
             else
@@ -189,17 +171,18 @@ namespace CurbSydeApp.Forms
                 minLabel3.Visible = false;
             }
 
-            if (carsOnScreen[3] != 0)
+            if (carArray.Count > 3)
             {
                 minLabel4.Visible = true;
-                carButton4.Text = carArray[carsOnScreen[3]].spot + " - " + carArray[carsOnScreen[3]].name;
-                if (carArray[carsOnScreen[3]].time < 7)
+                if (carArray[3].time < 7)
                 {
+                    carButton4.Text = "/ - " + carArray[3].name;
                     minLabel4.Text = "- min";
                 }
                 else
                 {
-                    minLabel4.Text = carArray[carsOnScreen[3]].time + " min";
+                    carButton4.Text = carArray[3].spot + " - " + carArray[3].name;
+                    minLabel4.Text = carArray[3].time + " min";
                 }
             }
             else
@@ -207,17 +190,18 @@ namespace CurbSydeApp.Forms
                 minLabel4.Visible = false;
             }
 
-            if (carsOnScreen[4] != 0)
+            if (carArray.Count > 4)
             {
                 minLabel5.Visible = true;
-                carButton5.Text = carArray[carsOnScreen[4]].spot + " - " + carArray[carsOnScreen[4]].name;
-                if (carArray[carsOnScreen[4]].time < 7)
+                if (carArray[4].time < 7)
                 {
+                    carButton5.Text = "/ - " + carArray[4].name;
                     minLabel5.Text = "- min";
                 }
                 else
                 {
-                    minLabel5.Text = carArray[carsOnScreen[4]].time + " min";
+                    carButton5.Text = carArray[4].spot + " - " + carArray[4].name;
+                    minLabel5.Text = carArray[4].time + " min";
                 }
             }
             else
@@ -225,10 +209,29 @@ namespace CurbSydeApp.Forms
                 minLabel5.Visible = false;
             }
         }
+        //Adds car to carArray
+        public void addCar()
+        {
+            Car c = new Car();
+            c.name = carNames[ranNum.Next(19)];
+            c.spot = (char)ranNum.Next(7) + 65;
+            c.time = 0;
+            c.stageNum = ranNum.Next(9);
+            c.coolerNum = ranNum.Next(9);
+            c.freezerNum = ranNum.Next(9);
+            c.sToteAmt = ranNum.Next(5) + 1;
+            c.cToteAmt = ranNum.Next(5) + 1;
+            c.fToteAmt = ranNum.Next(5) + 1;
+
+            carArray.Add(c);
+        }
         //Updates the car info from updateClock()
         public void updateCars(int change)
         {
-            
+            for (int i = 0; i < carArray.Count; i++)
+            {
+                carArray[i].time += change;
+            }
         }
     }
 }

@@ -76,7 +76,8 @@ namespace CurbSydeApp
             mainPanel.Controls.Add(LoginForm.loginScreen);
             LoginForm.loginScreen.Show();
         }
-        //Adds minutes to the clock & converts every hour to 100s & sends change amt to dispenseForm for the cars in queue
+        //Adds minutes to the clock & converts every hour to 100s
+        //      sends change amt to dispenseForm for the cars in queue & clockCheck()
         public void updateClock(int amt)
         {
             clock += amt;
@@ -89,32 +90,35 @@ namespace CurbSydeApp
             }
 
             DispenseForm.dispenseScreen.updateCars(amt);
+            clockCheck();
         }
         //WIP
-        public int clockCheck()
+        //Checks the clock with last checked values to determine what to do
+        public void clockCheck()
         {
             int c = ((clock / 100) * 60) + (clock % 100);
-            //checks dispense
+
+            //checks dispense & adds one car into queue no matter how much time has passed
             if(c - lastDisCheck > 7)
             {
-                //continue working
+                DispenseForm.dispenseScreen.addCar();
+
+                lastDisCheck += (c - lastDisCheck);
             }
-            //checks employees
+            //checks employees & changes statuses no matter how much time has passed
             if(c - lastEmpCheck >= 30)
             {
                 EmployeesForm.employeeScreen.changeStatuses();
 
-                lastEmpCheck += (c-lastEmpCheck / 30) * 30;
+                lastEmpCheck += ((c-lastEmpCheck) / 30) * 30;
             }
-            //checks picks
+            //checks picks & adds picks into the system
             if (clock - lastCheck >= 100)
             {
                 //Pick drop
 
                 lastCheck += 100;
             }
-
-            return 0;
         }
         ////Creates a pickHourArray using ranNum
         //public PickHour[] createPickHourArray()
@@ -132,6 +136,31 @@ namespace CurbSydeApp
         //    return temp;
         //}
 
+        //Creates a car name array
+        public string[] readInFile(string n)
+        {
+            string[] names = new string[20];
+
+            string line = "";
+            try
+            {
+                StreamReader na = new StreamReader(n);
+
+                for(int i = 0; i < names.Length; i++)
+                {
+                    line = na.ReadLine();
+
+                    names[i] = line;
+                }
+                na.Close();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("Exception: " + ex.Message);
+            }
+
+            return names;
+        }
         //Creates an employeeArray using ranNum (last index = null for User)
         public Employee[] createEmpArray(string e)
         {
@@ -171,39 +200,42 @@ namespace CurbSydeApp
 
             return temp;
         }
-        //Creates a carArray setting everything to 0, '/', and the given name of the car
-        public Car[] createCarArray(string c)
-        {
-            Car[] temp = new Car[20];
+        ////Creates a carArray setting everything to 0, '/', and the given name of the car
+        //public List<Car> createCarArray(string c)
+        //{
+        //    List<Car> temp = new List<Car>();
 
-            try
-            {
-                StreamReader cars = new StreamReader(c);
+        //    try
+        //    {
+        //        StreamReader cars = new StreamReader(c);
 
-                for (int i = 0; i < temp.Length; i++)
-                {
-                    temp[i].name = cars.ReadLine();
-                    temp[i].spot = '/';
-                    temp[i].time = 0;
-                    temp[i].stageNum = ranNum.Next(9);
-                    temp[i].coolerNum = ranNum.Next(9);
-                    temp[i].freezerNum = ranNum.Next(9);
-                    temp[i].sToteAmt = ranNum.Next(5) + 1;
-                    temp[i].cToteAmt = ranNum.Next(5) + 1;
-                    temp[i].fToteAmt = ranNum.Next(5) + 1;
+        //        for (int i = 0; i < temp.Length; i++)
+        //        {
+        //            Car c = new Car();
 
-                    //Debug.WriteLine(temp[i].name);
-                }
-                cars.Close();
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine("Exception: " + ex.Message);
-            }
+        //            c.name = cars.ReadLine();
+        //            c.spot = '/';
+        //            c.time = 0;
+        //            c.stageNum = ranNum.Next(9);
+        //            c.coolerNum = ranNum.Next(9);
+        //            c.freezerNum = ranNum.Next(9);
+        //            c.sToteAmt = ranNum.Next(5) + 1;
+        //            c.cToteAmt = ranNum.Next(5) + 1;
+        //            c.fToteAmt = ranNum.Next(5) + 1;
+
+        //            temp.Add(c);
+        //            //Debug.WriteLine(temp[i].name);
+        //        }
+        //        cars.Close();
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        Debug.WriteLine("Exception: " + ex.Message);
+        //    }
             
 
-            return temp;
-        }
+        //    return temp;
+        //}
         //Getter function - returns clock value
         public int getClock()
         {

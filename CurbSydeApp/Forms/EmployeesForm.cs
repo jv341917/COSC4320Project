@@ -20,7 +20,7 @@ namespace CurbSydeApp.Forms
         public EmployeesForm()
         {
             InitializeComponent();                              //Change to your file path to the txt file
-            employeeArray = MainForm.mainScreen.createEmpArray("C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\employeeNames.txt");  //Initializes
+            employeeArray = MainForm.mainScreen.createEmpArray("C:\\Users\\user\\source\\Repos\\CurbSydeApp\\employeeNames.txt");  //Initializes
             ranNum = new Random();                                                                                                  //Initializes
         }
         //Switches to "OverviewForm" & updates clock in MainForm
