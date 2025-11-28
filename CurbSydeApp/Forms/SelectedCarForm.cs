@@ -13,11 +13,13 @@ namespace CurbSydeApp.Forms
     public partial class SelectedCarForm : Form
     {
         public static SelectedCarForm selectScreen = new SelectedCarForm();         //Allows other screens to access SelectedCarForm
+        private Random ranNum;                                                      //Stores the random numbers generated for initializations
 
         //Constructor
         public SelectedCarForm()
         {
             InitializeComponent();
+            ranNum = new Random();              //Initializes
         }
 
         #region Switch Screen
@@ -48,16 +50,19 @@ namespace CurbSydeApp.Forms
         #endregion
 
         //Modify timeLabel so "00:00" = changed time
-        public void updateScreen()
+        public void updateScreen(Car c)
         {
             timeLabel.Text = MainForm.mainScreen.formatClock();
-        }
 
-        //TO DO :
-        //          Modify carLabel so "Spot" & "Car Name" = actual spot and name
-        //          Modify minLabel so "X" = actual time
-        //          Modify stage, cooler, & freezerLabels so "#" = spot #
-        //          Modify toteLabels so "#" = amt of totes
+            carLabel.Text = c.spot + " - " + c.name;
+            minLabel.Text = c.time + " min";
+            stageLabel.Text = "STAGE " + c.stageNum;
+            toteLabel1.Text = c.sToteAmt + " totes";
+            coolerLabel.Text = "COOLER " + c.coolerNum;
+            toteLabel2.Text = c.cToteAmt + " totes";
+            freezerLabel.Text = "FREEZER " + c.freezerNum;
+            toteLabel3.Text = c.fToteAmt + " totes";
+        }
 
     }
 }

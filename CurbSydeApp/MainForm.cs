@@ -24,19 +24,19 @@ namespace CurbSydeApp
     //    public int coolAmt;            //Stores the Cool amount of items from total
     //    public int frozenAmt;          //Stores the frozen amount of items from total
     //}
-    ////Struct to store car information
-    //public struct Car
-    //{
-    //    public string name;            //Stores the customer name
-    //    public char spot;              //Stores the spot the customer is parked in (A-H or -)
-    //    public int time;               //Stores the total amt of time since the car was created
-    //    public int stageNum;           //Stores the location of the general items (0-9)
-    //    public int coolerNum;          //Stores the location of the cold items (0-9)
-    //    public int freezerNum;         //Stores the location of the frozen items (0-9)
-    //    public int sToteAmt;           //Stores the amt of Stage totes (1-5)
-    //    public int cToteAmt;           //Stores the amt of Cooler totes (1-5)
-    //    public int fToteAmt;           //Stores the amt of Freezer totes (1-5)
-    //}
+    //Struct to store car information
+    public struct Car
+    {
+        public string name;            //Stores the customer name
+        public char spot;              //Stores the spot the customer is parked in (A-H or -)
+        public int time;               //Stores the total amt of time since the car was created
+        public int stageNum;           //Stores the location of the general items (0-9)
+        public int coolerNum;          //Stores the location of the cold items (0-9)
+        public int freezerNum;         //Stores the location of the frozen items (0-9)
+        public int sToteAmt;           //Stores the amt of Stage totes (1-5)
+        public int cToteAmt;           //Stores the amt of Cooler totes (1-5)
+        public int fToteAmt;           //Stores the amt of Freezer totes (1-5)
+    }
     //Struct to store employee information
     public struct Employee
     {
@@ -52,9 +52,8 @@ namespace CurbSydeApp
         public static MainForm mainScreen = new MainForm();     //Allows other screens to access MainForm
         private int clock;                                      //Stores the internal clock (500-2000)
         private int lastDisCheck;                               //Stores the clock time when the clock was last checked via checkClock() for dispense queue
-        private int lastCheck;                                  //Stores the clock time when the clock was last checked via checkClock() for employees & pick drops
-        //public string[] carNames;           //Stores the given car names from an input file
-        //public string[] empNames;           //Stores the given employee names from an input file
+        private int lastEmpCheck;                               //Stores the clock time when the clock was last checked via checkClock() for employee change
+        private int lastCheck;                                  //Stores the clock time when the clock was last checked via checkClock() for pick drops
         private Random ranNum;                                  //Stores the random numbers generated for initializations
 
         //Constructor
@@ -63,12 +62,10 @@ namespace CurbSydeApp
             InitializeComponent();
             mainPanel = panel1;                 //Initializes
             clock = 500;                        //Initializes
-            lastDisCheck = 500;                 //Initializes
+            lastDisCheck = 300;                 //Initializes
+            lastEmpCheck = 300;                 //Initializes
             lastCheck = 500;                    //Initializes
-            //carNames = new string[20];          //Initializes
-            //empNames = new string[11];          //Initializes
             ranNum = new Random();              //Initializes
-            //employeeArray = createEmpArray("C:\\Users\\JAISE\\source\\repos\\CurbSydeApp\\employeeNames.txt");   //Initializes
         }
         //Function that loads first screen via panel1
         private void MainForm_Load(object sender, EventArgs e)
@@ -79,7 +76,7 @@ namespace CurbSydeApp
             mainPanel.Controls.Add(LoginForm.loginScreen);
             LoginForm.loginScreen.Show();
         }
-        //Adds minutes to the clock & converts every hour to 100s
+        //Adds minutes to the clock & converts every hour to 100s & sends change amt to dispenseForm for the cars in queue
         public void updateClock(int amt)
         {
             clock += amt;
@@ -90,12 +87,35 @@ namespace CurbSydeApp
                 clock -= 60 * (tempClock / 60);
                 clock += 100 * (tempClock / 60);
             }
+
+            DispenseForm.dispenseScreen.updateCars(amt);
         }
-        ////WIP
-        //public int clockCheck()
-        //{
-        //    return 0;
-        //}
+        //WIP
+        public int clockCheck()
+        {
+            int c = ((clock / 100) * 60) + (clock % 100);
+            //checks dispense
+            if(c - lastDisCheck > 7)
+            {
+                //continue working
+            }
+            //checks employees
+            if(c - lastEmpCheck >= 30)
+            {
+                EmployeesForm.employeeScreen.changeStatuses();
+
+                lastEmpCheck += (c-lastEmpCheck / 30) * 30;
+            }
+            //checks picks
+            if (clock - lastCheck >= 100)
+            {
+                //Pick drop
+
+                lastCheck += 100;
+            }
+
+            return 0;
+        }
         ////Creates a pickHourArray using ranNum
         //public PickHour[] createPickHourArray()
         //{
@@ -151,32 +171,39 @@ namespace CurbSydeApp
 
             return temp;
         }
-        ////Creates a carArray setting everything to 0, '-', or null
-        //public Car[] createCarArray()
-        //{
-        //    Car[] temp = new Car[10];
+        //Creates a carArray setting everything to 0, '/', and the given name of the car
+        public Car[] createCarArray(string c)
+        {
+            Car[] temp = new Car[20];
 
-        //    for (int i = 0; i < temp.Length - 1; i++)
-        //    {
-        //        temp[i].name = null;
-        //        temp[i].spot = '-';
-        //        temp[i].time = 0;
-        //        temp[i].stageNum = 0;
-        //        temp[i].coolerNum = 0;
-        //        temp[i].freezerNum = 0;
-        //        temp[i].sToteAmt = 0;
-        //        temp[i].cToteAmt = 0;
-        //        temp[i].fToteAmt = 0;
-        //    }
+            try
+            {
+                StreamReader cars = new StreamReader(c);
 
-        //    return temp;
-        //}
-        ////Updates the last index of the employeeArray to include the user's name
-        //public void updateEmployeeArray(string name)
-        //{
-        //    employeeArray[5].name = name;
-        //}
+                for (int i = 0; i < temp.Length; i++)
+                {
+                    temp[i].name = cars.ReadLine();
+                    temp[i].spot = '/';
+                    temp[i].time = 0;
+                    temp[i].stageNum = ranNum.Next(9);
+                    temp[i].coolerNum = ranNum.Next(9);
+                    temp[i].freezerNum = ranNum.Next(9);
+                    temp[i].sToteAmt = ranNum.Next(5) + 1;
+                    temp[i].cToteAmt = ranNum.Next(5) + 1;
+                    temp[i].fToteAmt = ranNum.Next(5) + 1;
 
+                    //Debug.WriteLine(temp[i].name);
+                }
+                cars.Close();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("Exception: " + ex.Message);
+            }
+            
+
+            return temp;
+        }
         //Getter function - returns clock value
         public int getClock()
         {

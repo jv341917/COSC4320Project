@@ -39,5 +39,6 @@ namespace CurbSydeApp.Forms
 
         //TO DO : 
         //          Modify carLabel so it reflects the car name
+        //          set time in car to 0 & 
     }
 }
