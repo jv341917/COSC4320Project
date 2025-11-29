@@ -23,7 +23,7 @@ namespace CurbSydeApp.Forms
         {
             InitializeComponent();
             carArray = new List<Car>();
-            carNames = MainForm.mainScreen.readInFile("C:\\Users\\user\\source\\Repos\\CurbSydeApp\\carNames.txt");
+            carNames = MainForm.mainScreen.readInFile("C:\\Users\\user\\Desktop\\MVS Coding\\CurbSydeApp\\carNames.txt");
             ranNum = new Random();
         }
         #region Screen Switches
@@ -225,9 +225,9 @@ namespace CurbSydeApp.Forms
             c.name = carNames[ranNum.Next(19)];
 
             char temp = (char)(ranNum.Next(7) + 65);
-            for(int i = 0; i < carArray.Count; i++)
+            for (int i = 0; i < carArray.Count; i++)
             {
-                if(temp == carArray.ElementAt(i).spot)
+                if (temp == carArray.ElementAt(i).spot)
                 {
                     temp = (char)(ranNum.Next(7) + 65);
                 }
@@ -262,6 +262,11 @@ namespace CurbSydeApp.Forms
         public void removeCar(int i)
         {
             carArray.RemoveAt(i);
+        }
+
+        private void DispenseForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

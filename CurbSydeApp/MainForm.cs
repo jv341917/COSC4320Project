@@ -16,14 +16,15 @@ using System.Windows.Forms;
 namespace CurbSydeApp
 {
     public enum Activity { Picking, Dispensing, Inactive, Off };           //Enum to represent Employee activities
-    ////Struct to store pick hour information
-    //public struct PickHour
-    //{
-    //    public int total;              //Stores total amount for the hour (30-300)
-    //    public int genAmt;             //Stores the General amount of items from total
-    //    public int coolAmt;            //Stores the Cool amount of items from total
-    //    public int frozenAmt;          //Stores the frozen amount of items from total
-    //}
+    //Struct to store pick hour information
+    public struct PickHour
+    {
+        public int total;              //Stores total amount for the hour (30-300)
+        public int hour;
+        public int genAmt;             //Stores the General amount of items from total
+        public int coolAmt;            //Stores the Cool amount of items from total
+        public int frozenAmt;          //Stores the frozen amount of items from total
+    }
     //Struct to store car information
     public struct Car
     {
@@ -49,7 +50,8 @@ namespace CurbSydeApp
     public partial class MainForm : Form
     {
         public static Panel mainPanel;                          //Stores panel1 & allows other screens to access it to load in their screens
-        public static MainForm mainScreen = new MainForm();     //Allows other screens to access MainForm
+        public static MainForm mainScreen;                      //Allows other screens to access MainForm
+        public PickHour[] pickHours;                            //Stores the pick hour information
         private int clock;                                      //Stores the internal clock (500-2000)
         private int lastDisCheck;                               //Stores the clock time when the clock was last checked via checkClock() for dispense queue
         private int lastEmpCheck;                               //Stores the clock time when the clock was last checked via checkClock() for employee change
@@ -59,13 +61,17 @@ namespace CurbSydeApp
         //Constructor
         public MainForm()
         {
+            mainScreen = this;
             InitializeComponent();
-            mainPanel = panel1;                 //Initializes
-            clock = 500;                        //Initializes
-            lastDisCheck = 300;                 //Initializes
-            lastEmpCheck = 300;                 //Initializes
-            lastCheck = 500;                    //Initializes
-            ranNum = new Random();              //Initializes
+            mainPanel = panel1;                                 //Initializes
+            //PickForm.pickScreen = new PickForm();               //Initializes - reduces premature intialization
+            //PickWalkForm.pickWalkScreen = new PickWalkForm();   //Initializes - reduces premature intialization
+            clock = 1330;                                        //Initializes
+            lastDisCheck = 300;                                 //Initializes
+            lastEmpCheck = 300;                                 //Initializes
+            lastCheck = 500;                                    //Initializes
+            ranNum = new Random();                              //Initializes
+            pickHours = readPickHourFile("C:\\Users\\user\\Desktop\\MVS Coding\\CurbSydeApp\\pickHourInfo.txt");
         }
         //Function that loads first screen via panel1
         private void MainForm_Load(object sender, EventArgs e)
@@ -120,21 +126,60 @@ namespace CurbSydeApp
                 lastCheck += 100;
             }
         }
-        ////Creates a pickHourArray using ranNum
+
+        //Creates a pickHourArray using ranNum
         //public PickHour[] createPickHourArray()
         //{
         //    PickHour[] temp = new PickHour[15];
 
-        //    for(int i = 0; i < temp.Length; i++)
+        //    for (int i = 0; i < temp.Length; i++)
         //    {
+        //        temp[i] = new PickHour(); // <-- Must initialize each element
+
         //        temp[i].total = ranNum.Next(301);
-        //        temp[i].genAmt = ranNum.Next(temp[i].total+1);
-        //        temp[i].coolAmt = ranNum.Next((temp[i].total-temp[i].genAmt)+1);
+        //        temp[i].genAmt = ranNum.Next(temp[i].total + 1);
+        //        temp[i].coolAmt = ranNum.Next((temp[i].total - temp[i].genAmt) + 1);
         //        temp[i].frozenAmt = temp[i].total - (temp[i].genAmt + temp[i].coolAmt);
         //    }
 
         //    return temp;
         //}
+
+        // Reads pickHourInfo 
+        public PickHour[] readPickHourFile(string path)
+        {
+            List<PickHour> list = new List<PickHour>();
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] parts = line.Split('-');
+                        if (parts.Length != 5) continue; // skip malformed lines
+
+                        PickHour p = new PickHour
+                        {
+                            hour = int.Parse(parts[0]),
+                            total = int.Parse(parts[1]),
+                            genAmt = int.Parse(parts[2]),
+                            coolAmt = int.Parse(parts[3]),
+                            frozenAmt = int.Parse(parts[4])
+                        };
+                        list.Add(p);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("PickHour read error: " + ex.Message);
+            }
+
+            return list.ToArray();
+        }
+
 
         //Creates a car name array
         public string[] readInFile(string n)
@@ -200,42 +245,6 @@ namespace CurbSydeApp
 
             return temp;
         }
-        ////Creates a carArray setting everything to 0, '/', and the given name of the car
-        //public List<Car> createCarArray(string c)
-        //{
-        //    List<Car> temp = new List<Car>();
-
-        //    try
-        //    {
-        //        StreamReader cars = new StreamReader(c);
-
-        //        for (int i = 0; i < temp.Length; i++)
-        //        {
-        //            Car c = new Car();
-
-        //            c.name = cars.ReadLine();
-        //            c.spot = '/';
-        //            c.time = 0;
-        //            c.stageNum = ranNum.Next(9);
-        //            c.coolerNum = ranNum.Next(9);
-        //            c.freezerNum = ranNum.Next(9);
-        //            c.sToteAmt = ranNum.Next(5) + 1;
-        //            c.cToteAmt = ranNum.Next(5) + 1;
-        //            c.fToteAmt = ranNum.Next(5) + 1;
-
-        //            temp.Add(c);
-        //            //Debug.WriteLine(temp[i].name);
-        //        }
-        //        cars.Close();
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Debug.WriteLine("Exception: " + ex.Message);
-        //    }
-            
-
-        //    return temp;
-        //}
         //Getter function - returns clock value
         public int getClock()
         {

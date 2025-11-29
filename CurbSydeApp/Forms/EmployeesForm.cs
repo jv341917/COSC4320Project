@@ -20,7 +20,7 @@ namespace CurbSydeApp.Forms
         public EmployeesForm()
         {
             InitializeComponent();                              //Change to your file path to the txt file
-            employeeArray = MainForm.mainScreen.createEmpArray("C:\\Users\\user\\source\\Repos\\CurbSydeApp\\employeeNames.txt");  //Initializes
+            employeeArray = MainForm.mainScreen.createEmpArray("C:\\Users\\user\\Desktop\\MVS Coding\\CurbSydeApp\\employeeNames.txt");  //Initializes
             ranNum = new Random();                                                                                                  //Initializes
         }
         //Switches to "OverviewForm" & updates clock in MainForm
@@ -106,10 +106,10 @@ namespace CurbSydeApp.Forms
         public void changeStatuses()
         {
             int c = MainForm.mainScreen.getClock() / 100;
-            if(c > 12)
-            {
-                c -= 12;
-            }
+            //if(c > 12)
+            //{
+            //    c -= 12;
+            //}
 
             for (int i = 0; i < employeeArray.Length-1; i++)
             {

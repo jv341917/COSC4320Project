@@ -39,14 +39,21 @@ namespace CurbSydeApp.Forms
         //Switch to "DispensedXForm" & updates the clock in MainForm
         private void dispenseButton_Click(object sender, EventArgs e)
         {
-            MainForm.mainScreen.updateClock(1);
-            DispensedXForm.dispensedXScreen.updateScreen(index);
+            if (DispenseForm.dispenseScreen.getCar(index).time < 7)
+            {
+                MessageBox.Show("Wait for the car to choose a spot.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MainForm.mainScreen.updateClock(1);
+                DispensedXForm.dispensedXScreen.updateScreen(index);
 
-            DispensedXForm.dispensedXScreen.Dock = DockStyle.Fill;
-            DispensedXForm.dispensedXScreen.TopLevel = false;
-            MainForm.mainPanel.Controls.Clear();
-            MainForm.mainPanel.Controls.Add(DispensedXForm.dispensedXScreen);
-            DispensedXForm.dispensedXScreen.Show();
+                DispensedXForm.dispensedXScreen.Dock = DockStyle.Fill;
+                DispensedXForm.dispensedXScreen.TopLevel = false;
+                MainForm.mainPanel.Controls.Clear();
+                MainForm.mainPanel.Controls.Add(DispensedXForm.dispensedXScreen);
+                DispensedXForm.dispensedXScreen.Show();
+            }
         }
         #endregion
 
@@ -55,7 +62,15 @@ namespace CurbSydeApp.Forms
         {
             timeLabel.Text = MainForm.mainScreen.formatClock();
 
-            carLabel.Text = c.spot + " - " + c.name;
+            if (c.time < 7)
+            {
+                carLabel.Text = " / - " + c.name;
+            }
+            else
+            {
+                carLabel.Text = c.spot + " - " + c.name;
+            }
+
             minLabel.Text = c.time + " min";
             stageLabel.Text = "STAGE " + c.stageNum;
             toteLabel1.Text = c.sToteAmt + " totes";

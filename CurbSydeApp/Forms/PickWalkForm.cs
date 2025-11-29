@@ -12,22 +12,67 @@ namespace CurbSydeApp.Forms
 {
     public partial class PickWalkForm : Form
     {
-        public static PickWalkForm pickWalkScreen = new PickWalkForm();     //Allows other screens to access PickWalkForm
-        private int givenAmt;                                               //Stores the randomly determined amt given to user
-        private int totalAmt;                                               //Stores the total amt in category chosen by user
+        public static PickWalkForm pickWalkScreen = new PickWalkForm();    //Allows other screens to access PickWalkForm
+        private int category; // General, Cooled, Frozen
+        private int givenAmt;   // Amount assigned to user                                        
+        //private int totalAmt;  // Total category amount
+        //private int indexInArray;
+        private Random ranNum; 
 
         //Constructor
         public PickWalkForm()
         {
             InitializeComponent();
             //change once pickHourArray is ready
-            givenAmt = 60;                          //Initializes
-            totalAmt = 90;                          //Initializes
+            category = 0;
+            givenAmt = 0;                          //Initializes
+            //totalAmt = 0;                          //Initializes
+            ranNum = new Random();
+        }
+
+        //public void SetDepartment(string dep)
+        //{
+        //    category = dep;
+        //}
+        //Modify timeLabel "00:00" = changes to time & Modify categoryLabel "X" = category
+        public void updateScreen(int i, int index)
+        {
+            //indexInArray = index;
+            timeLabel.Text = MainForm.mainScreen.formatClock();
+
+            //int currentHr = MainForm.mainScreen.getClock() / 100;
+            //PickHour? hourData = MainForm.mainScreen.pickHours
+            //    .FirstOrDefault(p => p.hour == currentHr);
+
+            //if (!hourData.HasValue) return;
+
+            //walkAmtLabel.Text = $"{hourData.Value.total}";
+            category = i;
+
+            switch (i)
+            {
+                case 0:
+                    categoryLabel.Text = "General";
+                    givenAmt = ranNum.Next(MainForm.mainScreen.pickHours[index].genAmt) + 1;
+                    walkAmtLabel.Text = givenAmt + " / " + MainForm.mainScreen.pickHours[index].genAmt;
+                    break;
+                case 1:
+                    categoryLabel.Text = "Cooled";
+                    givenAmt = ranNum.Next(MainForm.mainScreen.pickHours[index].coolAmt) + 1;
+                    walkAmtLabel.Text = givenAmt + " / " + MainForm.mainScreen.pickHours[index].coolAmt;
+                    break;
+                case 2:
+                    categoryLabel.Text = "Frozen";
+                    givenAmt = ranNum.Next(MainForm.mainScreen.pickHours[index].frozenAmt) + 1;
+                    walkAmtLabel.Text = givenAmt + " / " + MainForm.mainScreen.pickHours[index].frozenAmt;
+                    break;
+            }
         }
         //Switches to "PickForm" & updates the clock in MainForm
         private void backButton_Click(object sender, EventArgs e)
         {
-            MainForm.mainScreen.updateClock(givenAmt/2);
+            PickForm.pickScreen.deductAmt(givenAmt, category);
+            MainForm.mainScreen.updateClock(givenAmt / 2);
             PickForm.pickScreen.updateScreen();
 
             PickForm.pickScreen.Dock = DockStyle.Fill;
@@ -38,14 +83,13 @@ namespace CurbSydeApp.Forms
 
             //Perform respective pick amount deductions
         }
-        //Modify timeLabel "00:00" = changes to time
-        public void updateScreen()
+
+        private void PickWalkForm_Load(object sender, EventArgs e)
         {
-            timeLabel.Text = MainForm.mainScreen.formatClock();
+
         }
 
         //TO DO :
         //          Modify walkAmtLabel "Y" = given amt & "X" = total category amt
-        //          Modify categoryLabel "X" = category
     }
 }

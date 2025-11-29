@@ -126,7 +126,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(522, 776);
+            ClientSize = new Size(522, 394);
             Controls.Add(walkAmtLabel);
             Controls.Add(bottomLabel);
             Controls.Add(categoryLabel);
@@ -137,6 +137,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "PickWalkForm";
             Text = "PickWalkForm";
+            Load += PickWalkForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

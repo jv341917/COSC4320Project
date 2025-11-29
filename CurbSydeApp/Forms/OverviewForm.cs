@@ -22,7 +22,7 @@ namespace CurbSydeApp.Forms
         }
 
         #region Screen Switches
-        
+
         //Switches to "DispenseForm" & updates the clock in MainForm
         private void switchDispenseButton_Click(object sender, EventArgs e)
         {
@@ -95,7 +95,12 @@ namespace CurbSydeApp.Forms
         {
             userNameLabel.Text = "Hi, " + LoginForm.loginScreen.getUserName();
         }
-        
+
+        private void OverviewForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //TO DO : 
         //          Modify dispenseQueueLabel so "#" = dispense queue amount
         //          Modify hourPicksLabel so "#" = remaining picks for the hour
